@@ -36,10 +36,6 @@
       "frameworks": {
         "monoandroid90": {
           "dependencies": {
-            "Microcharts": {
-              "target": "Package",
-              "version": "[0.7.1, )"
-            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.3.1, )"

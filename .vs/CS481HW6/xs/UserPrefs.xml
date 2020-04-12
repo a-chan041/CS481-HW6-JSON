@@ -1,16 +1,24 @@
 ﻿<Properties StartupConfiguration="{EBB362E4-E5CB-4EBF-8411-76F4F7C40D38}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="CS481HW6/MainPage.xaml">
+    <Files>
+      <File FileName="CS481HW6/MainPage.xaml" Line="19" Column="15" />
+      <File FileName="CS481HW6/App.xaml" Line="5" Column="14" />
+      <File FileName="CS481HW6/AssemblyInfo.cs" Line="1" Column="26" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CS481HW6" expanded="True">
             <Node name="CS481HW6" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
+              <Node name="App.xaml" expanded="True" />
+              <Node name="MainPage.xaml" expanded="True" />
             </Node>
             <Node name="CS481HW6.Android" expanded="True">
-              <Node name="Packages" expanded="True" />
+              <Node name="Assets" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="drawable" expanded="True" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>

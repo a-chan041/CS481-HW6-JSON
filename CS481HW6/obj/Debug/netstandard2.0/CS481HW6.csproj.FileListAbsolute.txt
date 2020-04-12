@@ -2,7 +2,6 @@
 /Users/amandachan/Projects/CS481HW6/CS481HW6/bin/Debug/netstandard2.0/CS481HW6.dll
 /Users/amandachan/Projects/CS481HW6/CS481HW6/bin/Debug/netstandard2.0/ref/CS481HW6.dll
 /Users/amandachan/Projects/CS481HW6/CS481HW6/bin/Debug/netstandard2.0/CS481HW6.pdb
-/Users/amandachan/Projects/CS481HW6/CS481HW6/obj/Debug/netstandard2.0/CS481HW6.csprojAssemblyReference.cache
 /Users/amandachan/Projects/CS481HW6/CS481HW6/obj/Debug/netstandard2.0/App.xaml.g.cs
 /Users/amandachan/Projects/CS481HW6/CS481HW6/obj/Debug/netstandard2.0/MainPage.xaml.g.cs
 /Users/amandachan/Projects/CS481HW6/CS481HW6/obj/Debug/netstandard2.0/CS481HW6.AssemblyInfoInputs.cache

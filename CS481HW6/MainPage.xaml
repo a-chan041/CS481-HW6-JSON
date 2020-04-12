@@ -1,7 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="CS481HW6.MainPage">
-    <StackLayout>
+    <StackLayout BackgroundColor="#FFFFF">
         <!-- Place new controls here -->
-        <Label Text="Added Microcharts" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+        <Label Text="Mobile Pocket Dictionary" HorizontalOptions="Center" VerticalOptions="Start" TextColor="Black" FontFamily="BebasNeue-Regular.ttf#BebasNeue-Regular" FontSize="Title"/>
+        <Entry x:Name="input" Text="type here" TextColor="#7C7287" FontFamily="BebasNeue-Regular.ttf#BebasNeue-Regular"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Button ImageSource="search.png" Grid.Row="1" HorizontalOptions="Center" BackgroundColor="#8AC926"></Button>
     </StackLayout>
 </ContentPage>
