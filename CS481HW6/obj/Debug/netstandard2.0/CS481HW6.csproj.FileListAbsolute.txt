@@ -10,3 +10,4 @@
 /Users/amandachan/Projects/CS481HW6/CS481HW6/obj/Debug/netstandard2.0/CS481HW6.dll
 /Users/amandachan/Projects/CS481HW6/CS481HW6/obj/Debug/netstandard2.0/ref/CS481HW6.dll
 /Users/amandachan/Projects/CS481HW6/CS481HW6/obj/Debug/netstandard2.0/CS481HW6.pdb
+/Users/amandachan/Projects/CS481HW6/CS481HW6/obj/Debug/netstandard2.0/CS481HW6.csprojAssemblyReference.cache
