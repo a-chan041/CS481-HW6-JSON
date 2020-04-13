@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Plugin.Connectivity;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json.Converters;
@@ -28,6 +29,7 @@ namespace CS481HW6
         async void GoSearch(object sender, System.EventArgs e)
         {
             // referenced: slide 13 from Wk 9 PPT
+            //reference2: https://www.codementor.io/@lutaayahuzaifahidris/xamarin-forms-simple-list-of-items-with-offline-capability-cross-platform-app-btyq0bihv
 
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Add("Authorization", "Token " + ApiKeys.OwlBotKey);
@@ -46,6 +48,26 @@ namespace CS481HW6
         private class ApiKeys
         {
             public static string OwlBotKey = "6f7696e6566f5942bca28f2dc6e6696954756417";
+        }
+
+        public partial class OwlBotInfo
+        {
+            [JsonProperty ("type")]
+            public string type { get; set; }
+
+            [JsonProperty("definition")]
+            public string definition { get; set; }
+
+            [JsonProperty("example")]
+            public string example { get; set; }
+
+            [JsonProperty("image_url")]
+            public string image_url { get; set; }
+
+            [JsonProperty("emoji")]
+            public string emoji { get; set; }
+
+            public static OwlBotInfo FromJson(string json) => JsonConvert.DeserializeObject<OwlBotInfo>(json);
         }
     }
 

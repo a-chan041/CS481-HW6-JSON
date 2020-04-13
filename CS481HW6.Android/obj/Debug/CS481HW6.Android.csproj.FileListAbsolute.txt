@@ -492,3 +492,4 @@
 /Users/amandachan/Projects/CS481HW6/CS481HW6.Android/obj/Debug/android/src/crc643f46942d9dd1fff9/SwipeViewRenderer.java
 /Users/amandachan/Projects/CS481HW6/CS481HW6.Android/obj/Debug/android/src/crc643f46942d9dd1fff9/ScrollLayoutManager.java
 /Users/amandachan/Projects/CS481HW6/CS481HW6.Android/obj/Debug/android/src/crc64cea48322b3427ae9/ConnectivityChangeBroadcastReceiver.java
+/Users/amandachan/Projects/CS481HW6/CS481HW6.Android/obj/Debug/stamp/SetupDependenciesForDesigner.stamp
