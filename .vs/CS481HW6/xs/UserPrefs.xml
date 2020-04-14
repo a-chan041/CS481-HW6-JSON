@@ -1,11 +1,9 @@
 ﻿<Properties StartupConfiguration="{EBB362E4-E5CB-4EBF-8411-76F4F7C40D38}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="CS481HW6/MainPage.xaml.cs">
     <Files>
-      <File FileName="CS481HW6/MainPage.xaml" Line="17" Column="65" />
-      <File FileName="CS481HW6/AssemblyInfo.cs" />
-      <File FileName="CS481HW6/MainPage.xaml.cs" Line="32" Column="83" />
-      <File FileName="../../.nuget/packages/xamarin.essentials/1.5.2/readme.txt" />
-      <File FileName="CS481HW6.Android/Properties/AndroidManifest.xml" />
+      <File FileName="CS481HW6/MainPage.xaml" Line="18" Column="22" />
+      <File FileName="CS481HW6/MainPage.xaml.cs" Line="50" Column="34" />
+      <File FileName="CS481HW6/App.xaml" Line="1" Column="39" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

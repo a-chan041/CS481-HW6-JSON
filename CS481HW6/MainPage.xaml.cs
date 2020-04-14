@@ -26,6 +26,11 @@ namespace CS481HW6
             InitializeComponent();
         }
 
+        public bool IsConnected()
+        {
+            return CrossConnectivity.Current.IsConnected;
+        }
+
         async void GoSearch(object sender, System.EventArgs e)
         {
             // referenced: slide 13 from Wk 9 PPT
@@ -42,10 +47,25 @@ namespace CS481HW6
             request.RequestUri = uri;
 
             HttpResponseMessage response = await client.SendAsync(request);
-            
-        }
+            WordInfo word = null;
 
-        private class ApiKeys
+            if (response.IsSuccessStatusCode)
+            {
+                
+                var content = await response.Content.ReadAsStringAsync();
+                 word = WordInfo.FromJson(content);
+                BindingContext = word;
+            }
+            else
+            {
+                //if the request was unsuccessful
+                Console.WriteLine("ERROR");
+                Console.WriteLine("Code: " + response.StatusCode.ToString());
+                await DisplayAlert("Search Failed", "ERROR" + response.StatusCode.ToString(), "OK").ConfigureAwait(false);
+            }
+}
+
+private class ApiKeys
         {
             public static string OwlBotKey = "6f7696e6566f5942bca28f2dc6e6696954756417";
         }
@@ -68,6 +88,22 @@ namespace CS481HW6
             public string emoji { get; set; }
 
             public static OwlBotInfo FromJson(string json) => JsonConvert.DeserializeObject<OwlBotInfo>(json);
+        }
+
+        public partial class WordInfo
+        {
+            [JsonProperty("definitions")]
+            public OwlBotInfo[] Def { get; set; }
+
+
+            [JsonProperty("word")]
+            public string word { get; set; }
+
+
+            [JsonProperty("pronunciation")]
+            public string pronunciation { get; set; }
+
+            public static WordInfo FromJson(string json) => JsonConvert.DeserializeObject<WordInfo>(json);
         }
     }
 

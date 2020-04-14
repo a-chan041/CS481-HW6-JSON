@@ -3,7 +3,7 @@
     <StackLayout BackgroundColor="#FFFFF">
         <!-- Place new controls here -->
         <Label Text="Mobile Pocket Dictionary" HorizontalOptions="Center" VerticalOptions="Start" TextColor="Black" FontFamily="BebasNeue-Regular.ttf#BebasNeue-Regular" FontSize="Title"/>
-        <Entry x:Name="input" Text="search word" TextColor="#7C7287" FontFamily="BebasNeue-Regular.ttf#BebasNeue-Regular"/>
+        <Entry x:Name="input" Placeholder="search word" PlaceholderColor="LightGray" TextColor="#7C7287" FontFamily="BebasNeue-Regular.ttf#BebasNeue-Regular"/>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
@@ -15,5 +15,11 @@
             </Grid.ColumnDefinitions>
         </Grid>
         <Button ImageSource="search.png" Grid.Row="1" HorizontalOptions="Center" BackgroundColor="#8AC926"></Button>
+        <Label Text="Word: " Style="{StaticResource Labels}"/>
+        <Label Text="Type: " Style="{StaticResource Labels}"/>
+        <Label Text="Image: " Style="{StaticResource Labels}"/>
+        <Label Text="Example: " Style="{StaticResource Labels}"/>
+        <Label Text="Emoji: " Style="{StaticResource Labels}"/>
+
     </StackLayout>
 </ContentPage>
