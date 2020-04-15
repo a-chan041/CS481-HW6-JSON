@@ -12,6 +12,7 @@ using Newtonsoft.Json.Converters;
 using System.Net.Http;
 using Json.Net;
 using System.Globalization;
+using Xamarin.Essentials;
 
 
 namespace CS481HW6
@@ -24,11 +25,24 @@ namespace CS481HW6
         public MainPage()
         {
             InitializeComponent();
+            IsConnected();
         }
 
-        public bool IsConnected()
+        public bool IsConnected() //checking user connectivity
+                                  //referenced: https://docs.microsoft.com/en-us/xamarin/essentials/connectivity?tabs=androidconnect
         {
-            return CrossConnectivity.Current.IsConnected;
+            var current = Connectivity.NetworkAccess;
+
+            if (current == NetworkAccess.Internet)
+            {
+                // user is connected to internet
+                return true;
+            }
+
+
+            DisplayAlert("ERROR", "You are not connected to the Internet", "OK"); //display error if user is not connected to the internet
+            return false;
+        
         }
 
         async void GoSearch(object sender, System.EventArgs e)
@@ -37,10 +51,10 @@ namespace CS481HW6
             //reference2: https://www.codementor.io/@lutaayahuzaifahidris/xamarin-forms-simple-list-of-items-with-offline-capability-cross-platform-app-btyq0bihv
 
             HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Authorization", "Token " + ApiKeys.OwlBotKey);
+            client.DefaultRequestHeaders.Add("Authorization", "Token " + "6f7696e6566f5942bca28f2dc6e6696954756417");
 
             var uri = new Uri(
-            string.Format($"https://owlbot.info/api/v4/dictionary/"+ $"{input.Text}"));
+            string.Format($"https://owlbot.info/api/v4/dictionary/" + $"{input.Text}")); //open Owlbot page concatenated with word user looks up in search bar
 
             var request = new HttpRequestMessage();
             request.Method = HttpMethod.Get;
@@ -49,48 +63,22 @@ namespace CS481HW6
             HttpResponseMessage response = await client.SendAsync(request);
             WordInfo word = null;
 
-            if (response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode) //if http page is found
             {
-                
+
                 var content = await response.Content.ReadAsStringAsync();
-                 word = WordInfo.FromJson(content);
+                word = WordInfo.FromJson(content); //get data from JSON
                 BindingContext = word;
             }
-            else
+
+            else //if page is not found
             {
-                //if the request was unsuccessful
-                Console.WriteLine("ERROR");
-                Console.WriteLine("Code: " + response.StatusCode.ToString());
-                await DisplayAlert("Search Failed", "ERROR" + response.StatusCode.ToString(), "OK").ConfigureAwait(false);
+               Console.WriteLine("An error occured while loading data");
             }
-}
-
-private class ApiKeys
-        {
-            public static string OwlBotKey = "6f7696e6566f5942bca28f2dc6e6696954756417";
+          
         }
 
-        public partial class OwlBotInfo
-        {
-            [JsonProperty ("type")]
-            public string type { get; set; }
-
-            [JsonProperty("definition")]
-            public string definition { get; set; }
-
-            [JsonProperty("example")]
-            public string example { get; set; }
-
-            [JsonProperty("image_url")]
-            public string image_url { get; set; }
-
-            [JsonProperty("emoji")]
-            public string emoji { get; set; }
-
-            public static OwlBotInfo FromJson(string json) => JsonConvert.DeserializeObject<OwlBotInfo>(json);
-        }
-
-        public partial class WordInfo
+        public partial class WordInfo //WordInfo object
         {
             [JsonProperty("definitions")]
             public OwlBotInfo[] Def { get; set; }
@@ -105,6 +93,27 @@ private class ApiKeys
 
             public static WordInfo FromJson(string json) => JsonConvert.DeserializeObject<WordInfo>(json);
         }
+
+        public partial class OwlBotInfo //OwlBotInfo object created from JSON recieved from OwlBotAPI
+        {
+                [JsonProperty("type")]
+                public string type { get; set; }
+
+                [JsonProperty("definition")]
+                public string definition { get; set; }
+
+                [JsonProperty("example")]
+                public string example { get; set; }
+
+                [JsonProperty("image_url")]
+                public string image_url { get; set; }
+
+                [JsonProperty("emoji")]
+                public string emoji { get; set; }
+
+                public static OwlBotInfo FromJson(string json) => JsonConvert.DeserializeObject<OwlBotInfo>(json);
+        }
+        
     }
 
 }

@@ -7,6 +7,10 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -15,11 +19,16 @@
             </Grid.ColumnDefinitions>
         </Grid>
         <Button ImageSource="search.png" Grid.Row="1" HorizontalOptions="Center" BackgroundColor="#8AC926"></Button>
-        <Label Text="Word: " Style="{StaticResource Labels}"/>
-        <Label Text="Type: " Style="{StaticResource Labels}"/>
-        <Label Text="Image: " Style="{StaticResource Labels}"/>
-        <Label Text="Example: " Style="{StaticResource Labels}"/>
-        <Label Text="Emoji: " Style="{StaticResource Labels}"/>
+        <Label Text="Word: " Style="{StaticResource Labels}" Grid.Column="0" Grid.Row="0"/>
+        <Label Text="Type: " Style="{StaticResource Labels}" Grid.Column="0" Grid.Row="1"/>
+        <Label Text="Image: " Style="{StaticResource Labels}" Grid.Column="0" Grid.Row="2"/>
+        <Label Text="Example: " Style="{StaticResource Labels}" Grid.Column="0" Grid.Row="3"/>
+        <Label Text="Emoji: " Style="{StaticResource Labels}" Grid.Column="0" Grid.Row="4"/>
+
+        <Label Text="{Binding word}" Style="{StaticResource Labels}" Grid.Column="2" Grid.Row="0"/>
+        <Label Text="{Binding Def[0].definition}" Style="{StaticResource Labels}" Grid.Column="2" Grid.Row="1" LineBreakMode="CharacterWrap"/>
+        <Label Text="{Binding Def[0].type}" Style="{StaticResource Labels}" Grid.Column="2" Grid.Row="2" LineBreakMode="CharacterWrap"/>
+        <Label Text="{Binding Def[0].example}" Style="{StaticResource Labels}" Grid.Column="2" Grid.Row="3" LineBreakMode="CharacterWrap"/>
 
     </StackLayout>
 </ContentPage>
